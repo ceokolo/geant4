@@ -1,0 +1,23 @@
+#/run/initialize
+#/control/saveHistory
+#/control/macroPath $HOME/B1-b/vis.mac
+/vis/open OGL 600x600-0+0
+/control/execute vis.mac
+#/control/verbose 0
+#/run/verbose 0
+#/event/verbose 0
+#/tracking/verbose 1
+/gps/particle gamma
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 0. cm
+/gps/pos/confine Envelope
+/gps/pos/radius 2.5 cm
+/gps/pos/inner_radius 0.2 cm
+/gps/pos/halfz 2.1 cm
+#/gps/ang/type iso
+/gps/energy {eKin} keV
+/gps/number 1
+/run/beamOn 100000
+/vis/ogl/printEPS
+/vis/scene/endOfEventAction accumulate

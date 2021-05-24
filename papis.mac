@@ -1,0 +1,7 @@
+# specified 50keV gamma energies to the direction (0.,0.,zpos)
+#
+/gun/particle gamma
+/gun/energy 50 keV
+/gun/position 0 0 {zpos} mm
+/run/beamOn 100000
+/control/shell Edep.dat output_{zpos}.dat

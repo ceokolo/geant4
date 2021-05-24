@@ -1,0 +1,40 @@
+# Macro file for example B1
+# 
+# Can be run in batch, without graphic
+# or interactively: Idle> /control/execute run1.mac
+#
+# Change the default number of workers (in multi-threading mode) 
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+/run/initialize
+#
+/control/verbose 0
+/control/macroPath $HOME/B1-b/hpge.mac
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 1
+
+#/control/foreach kapis.mac eKin "50"
+
+#/control/foreach kapis.mac eKin "25, 50, 75, 100, 125, 150, 175, 200, 220, 240, 260, 280, 300, 325, 350, 375, 400, 440, 480, 520, 560, 600, 650, #700, 750, 800, 850, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2100, 2400, 2700, 3000"
+
+/control/foreach hpge.mac eKin "25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 440, 480, 520, 560, 600, 650, 700, 750, 800, 850, 900, 1000, 1100, 1200, 1300, 1400, 1600, 1800, 2100, 2400, 2700, 3000"
+/run/printProgress 100
+#
+#
+# gamma 6 MeV to the direction (0.,0.,1.)
+#
+#/gun/particle gamma
+#
+#/gun/energy {eKin} keV
+#
+#/run/beamOn 100000 
+# 
+# proton 210 MeV to the direction (0.,0.,1.)
+#
+#/gun/particle proton
+#/gun/energy 210 MeV
+#/tracking/verbose 2
+#
+#/run/beamOn 1
